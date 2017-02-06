@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="cartified">
+
+<head>
+    <title>Shoping cart</title>
+    
+    <link href="components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-masthead">
+        <div class="container">
+            <nav class="app-nav pull-right">
+                <a href="#/checkout" class="app-nav-item" ng-class="{active: selected == '/checkout'}"><span class="glyphicon glyphicon-shopping-cart"></span>Checkout</a>
+            </nav>
+            <nav class="app-nav">
+                <a class="app-nav-item" ng-class="{active: selected == '/'}" href="#/">Home</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div ng-view></div>
+    </div>
+
+    <div class="app-footer">
+        
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </div>
+
+
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-route/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/cart-controllers.js"></script>
+    <script src="js/services/cart-services.js"></script>
+    <script src="js/filters/items-filter.js"></script>
+</body>
+
+</html>
