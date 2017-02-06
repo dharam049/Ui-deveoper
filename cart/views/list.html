@@ -1,0 +1,30 @@
+<h1 class="title">Men's Shoes</h1>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="col-sm-6 col-md-4" ng-repeat="item in items | ItemsFilter: query  track by $index">
+            <div class="thumbnail">
+                <img ng-src="data/{{item.img}}" alt="...">
+                <div class="caption">
+                    <h3>{{item.brand +' - ' +item.label}}</h3>
+                    <label>Qty:</label>
+                    <input class="number" type="number" min="1" ng-model="item.quantity" ng-init="item.quantity = 1">
+                    <a href="" class="btn btn-primary btn-sm" ng-click="addToCart(item)" role="button">Add</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-3 col-sm-offset-1">   
+        <div class="input-group">
+          <input type="text" ng-model="query" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div><!-- /input-group -->            
+
+        <h4>Number of Items</h4>
+        <div id="cart-icon">
+            <p>{{total}} <span class="glyphicon glyphicon-shopping-cart"></span></p> 
+        </div>
+    </div>
+</div>

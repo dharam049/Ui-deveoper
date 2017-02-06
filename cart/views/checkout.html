@@ -1,0 +1,59 @@
+<h1 class="title">Checkout</h1>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="cart-info">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td class="image">Image</td>
+                            <td class="name">Product Name</td>
+                            <td class="model">Model</td>
+                            <td class="quantity">Quantity</td>
+                            <td class="price">Unit Price</td>
+                            <td class="total">Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(key, item) in cart track by $index">
+                            <td class="image muted center_text">
+                                <a href="">
+                                    <img width="100px" ng-src="data/{{items[key].img}}" alt=".." title="..">
+                                </a>
+                            </td>
+                            <td class="name">
+                                <a href="">{{items[key].label}}</a>
+                            </td>
+                            <td class="model">{{items[key].brand}}</td>
+                            <td class="quantity">
+                            	<input type="number" min="1" value="{item.quantity}}" ng-model="item.quantity" ng-keyup="changeQuantity(item);">
+                                <button ng-click="removeFromCart(item)">Remove</button>
+                            </td>
+                            <td class="price">{{ items[key].price}} AED</td>
+                            <td class="total">{{ items[key].price*item.quantity}} AED</td>
+                        </tr>                        
+                        <tr>
+                            <td colspan="5"></td>
+                            <td>Total: {{total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-5 hidden-xs">
+
+    </div>
+    <div class="col-xs-2 col-md-2">
+        <a href="" class="btn btn-primary">Checkout</a>
+    </div>
+    <div class="col-md-5 col-md-5">
+        <a href="#/" class="btn btn-primary pull-right" id="continue-shopping">Continue Shopping</a>
+        <button ng-click="clear()" class="btn btn-warning pull-right">Clear</button>
+    </div>
+</div>
