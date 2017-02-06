@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="instructions"></div>
+        <div class="comment-box"></div>
+        <div class="challenge"></div>
+        <div>
+            <button id="first">Save for later</button>
+            <a href="http://twitter.com" _target="blank">
+                <button>
+                    Tell your friends
+                </button>
+            </a>
+        </div>
+    </div>
+    <script>
+        (function() {
+            function runScripts() {
+                var bodyScripts = 'body script:not([src])';
+                Array.prototype.forEach.call(document.querySelectorAll(bodyScripts), function setJSXType(element) {
+                    element.setAttribute('type', 'text/jsx');
+                });
+            };
+
+            if (window.addEventListener) {
+                window.addEventListener('DOMContentLoaded', runScripts, false);
+            } else {
+                window.attachEvent('onload', runScripts);
+            }
+        })(
+    </script>
+    <script src='https://fb.me/react-0.13.0.js'></script>
+    <script src='http://fb.me/JSXTransformer-0.13.0.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js'></script>
+    <script type="text/jsx" src="js/index.js"></script>
+
+</body>
+
+</html>
